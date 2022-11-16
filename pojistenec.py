@@ -15,37 +15,35 @@ class Pojistenec:
         for pojistenec in pojistenci:
             print(pojistenec)
             
-class NovyPojistenec(Pojistenec):
-    def __init__(self, jmeno, prijmeni, tel_cislo, vek):
-        super().__init__(jmeno, prijmeni, tel_cislo, vek)
-
-    def pridej_jmeno(self):
-        self.jmeno = str(input("Zadejte jméno pojištěného: "))
-        pojistenci.append(self.jmeno)
-        
-    def pridej_prijmeni(self):
-        self.prijmeni = str(input("Zadejte přijmení pojištěného: "))
-        pojistenci.append(self.prijmeni)
-    
-    def pridej_tel_cislo(self):
-        self.tel_cislo = str(input("Zadejte telefonní číslo pojištěného: "))
-        while len(str(self.tel_cislo)) != 9:  # aby nedošlo k zadání chybného formátu čísla
+    def pridej_noveho(self):
+        nove_jmeno = str(input("Zadejte jméno pojištěného: "))
+        nove_prijmeni = str(input("Zadejte přijmení pojištěného: "))
+        nove_tel_cislo = str(input("Zadejte telefonní číslo pojištěného: "))
+        while len(str(nove_tel_cislo)) != 9:  # aby nedošlo k zadání chybného formátu čísla
             print("Špatný formát telefonního čísla.")
-            self.tel_cislo = str(input("Zadejte znovu telefonní číslo: "))
-        pojistenci.append(self.tel_cislo)
-            
-    def pridej_vek(self):
-        self.vek = int(input("Zadejte věk pojištěného: "))
-        while 1 > self.vek > 100:  # aby nedošlo k chybnému zadání věku
+            nove_tel_cislo = str(input("Zadejte znovu telefonní číslo: "))
+        novy_vek = int(input("Zadejte věk pojištěného: "))
+        while 1 > novy_vek > 100:  # aby nedošlo k chybnému zadání věku
             print("Neplatný věk")
-            self.vek = int(input("Zadejte znovu svůj věk: "))
-        pojistenci.append(self.vek)
-            
-    
+            novy_vek = int(input("Zadejte znovu svůj věk: "))
+        novy_pojistenec = Pojistenec(nove_jmeno, nove_prijmeni, nove_tel_cislo, novy_vek) 
+        pojistenci.append(novy_pojistenec)
+        print(novy_pojistenec)   
+        
+    def vyhledej_pojisteneho(self):
+        vyhledani_jmena = str(input("Zadejte jméno pojištěného: "))
+        vyhledani_prijmeni = str(input("Zadejte příjmení pojištěného: "))
+
+        for pojistenec in pojistenci:
+            if vyhledani_jmena == self.jmeno in pojistenci and vyhledani_prijmeni == self.prijmeni in pojistenci:  # porovnání zadaných hodnot s hodnotami v seznamu
+                print(pojistenec)
+            else:
+                print("Hledaná osoba není v databázi.")
+
         
 
-
-
+        
+        
 adam = Pojistenec("Adam", "Kyselka", "788605211", 37)
 marie = Pojistenec("Marie", "Stará", "656711500", 40)
 dalibor = Pojistenec("Dalibor", "Novosad", "791523888", 24)
@@ -54,4 +52,5 @@ pojistenci.append(adam)
 pojistenci.append(marie)
 pojistenci.append(dalibor)
 pojistenci.append(frantisek)
+
 
