@@ -34,11 +34,11 @@ class Pojistenec:
         vyhledani_jmena = str(input("Zadejte jméno pojištěného: "))
         vyhledani_prijmeni = str(input("Zadejte příjmení pojištěného: "))
 
-        for pojistenec in pojistenci:
-            if vyhledani_jmena == self.jmeno in pojistenci and vyhledani_prijmeni == self.prijmeni in pojistenci:  # porovnání zadaných hodnot s hodnotami v seznamu
-                print(pojistenec)
+        for pojisteni in pojistenci:
+            if vyhledani_jmena == pojisteni.jmeno and vyhledani_prijmeni == pojisteni.prijmeni:  # porovnání zadaných hodnot s hodnotami v seznamu
+                print(pojisteni)
             else:
-                print("Hledaná osoba není v databázi.")
+                print("Hledaná osoba není v databázi")
 
         
 
