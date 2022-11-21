@@ -1,9 +1,9 @@
-from pojistenec import Pojistenec, pojistenci  # import tříd Pojistenec, Hlavicky a seznam pojistenci
+from pojistenec import Pojistenec  # import tříd Pojistenec, Hlavicky
 from vypis import Hlavicky
-hlavicky=Hlavicky()
+hlavicky = Hlavicky()
 pokracovat = True
 
-while pokracovat:
+while pokracovat:  # cyklus vypisovaní aplikace
     print(hlavicky.uvodni_hlavicka())
     print(hlavicky.menu())
     volba = int(input("Napište číslo akce: "))
@@ -12,18 +12,23 @@ while pokracovat:
         Pojistenec.pridej_noveho(Pojistenec)
         input("Data byla uložena. Pokračujte libovolnou klávesou...")
         hlavicky.vycisti_obrazovku()  # vyčistíme si obrazovku od nepotřebného textu
-            
+
     elif volba == 2:  # vypsání všech pojištěných
         Pojistenec.zobraz_databazi(Pojistenec)  # vypsání všech pojištěnců ze seznamu
 
         input("Pokračujte libovolnou klávesou...")
         hlavicky.vycisti_obrazovku()
-        
+
     elif volba == 3:  # vyhledání pojištěného
-        Pojistenec.vyhledej_pojisteneho(Pojistenec)
+        vyhledani = Pojistenec.vyhledej_pojisteneho(Pojistenec)
+        if len(vyhledani) > 0:  # vypsání hledané osoby
+            for pojistenec in vyhledani:
+                print(pojistenec)
+        else:
+            print("Osoba nenalezena.")
         input("Pokračujte libovolnou klávesou...")
         hlavicky.vycisti_obrazovku()
-        
+
     elif volba == 4:  # ukončení aplikace
         print("Děkujeme za použití naší aplikace.")
         pokracovat = False
