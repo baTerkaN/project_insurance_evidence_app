@@ -6,7 +6,8 @@ Jedná se o závěrečný projekt rekvalifikačnho kurzu od itnetwork.
 
 Tato vzorová aplikace má za cíl evidovat a upravovat seznam pojištěnců. Aplikace je v součaném stádiu ovládána přes konzoli.
 
-### Ukázka programu
+## Ukázka programu
+
 Všechna uvedená jména a data jsou smyšlená. Podobnost s realitou je čistě náhodná. :)
 
 ```
