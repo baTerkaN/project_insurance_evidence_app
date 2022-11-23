@@ -7,7 +7,6 @@ Jedná se o závěrečný projekt rekvalifikačnho kurzu od itnetwork.
 Tato vzorová aplikace má za cíl evidovat a upravovat seznam pojištěnců. Aplikace je v součaném stádiu ovládána přes konzoli.
 
 ### Ukázka programu
-
 Všechna uvedená jména a data jsou smyšlená. Podobnost s realitou je čistě náhodná. :)
 
 ```
@@ -74,5 +73,5 @@ Příští verze počítá s frameworkem Django a SQL databází.
 
 ## Autor
 
-* **Tereza Nová** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Tereza Nová** - *Initial work* - [baTerkaN](https://github.com/baTerkaN)
 
